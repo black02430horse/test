@@ -7,18 +7,19 @@ type SidebarComponentStyleProps = StyledComponentProps & {} ;
 export const SidebarComponentStyle = styled('div')<SidebarComponentStyleProps>(
   ({ theme }) => {
     const customTheme = theme as CustomTheme;
+
     return {
-      width: "300px",
+      width: "100%",
       height: "100vh",
       backgroundColor: customTheme.colors.secondary00,
-      borderRadius: "",
-      
+
       '.sidebar-logo-img': {
         marginLeft: "9%",
         paddingTop: "3.5rem",
         width: '200px',
         marginBottom: '2rem',
       },
+
       '.sidebar-list': {
         padding: '2rem',
         '.sidebar-item': {
@@ -34,6 +35,7 @@ export const SidebarComponentStyle = styled('div')<SidebarComponentStyleProps>(
             fontSize: "17px"
           }
         },
+
         '.active' : {
           backgroundColor: customTheme.colors.white,
           color: customTheme.colors.black
