@@ -12,9 +12,6 @@ export const SidebarComponent: React.FC = () => {
         <img className = "sidebar-logo-img" src = {Logo} alt = "sidebar logo"/>
       </Link>
         <Box sx = {{ height: '16px'}} />
-        <Box>
-          asldkfa;sdf
-        </Box>
         <Box className = "sidebar-list">
           <Link className = "sidebar-item active" to = "/">
             <ClockSvg svgColor = "black" />
