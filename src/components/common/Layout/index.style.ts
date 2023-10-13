@@ -1,11 +1,12 @@
 import { StyledComponentProps, styled } from '@mui/material';
 
 import { CustomTheme } from '../../../styles/types';
+import { PATH } from '../../../consts';
 
-type LayoutComponentStyleProps = StyledComponentProps & {} ;
+type LayoutComponentStyleProps = StyledComponentProps & {currentPath : string} ;
 
 export const LayoutComponentStyle = styled('div')<LayoutComponentStyleProps>(
-  ({ theme }) => {
+  ({ theme, currentPath }) => {
     const customTheme = theme as CustomTheme;
 
     return {
@@ -23,13 +24,42 @@ export const LayoutComponentStyle = styled('div')<LayoutComponentStyleProps>(
           backgroundColor: customTheme.colors.white,
           // width: "100%",
           height: '100%',
-          backgroundImage: 'url(/world.jpg)',
-          padding: '4rem 2rem',
+          backgroundImage: (currentPath === PATH.DOWNLOAD || currentPath === PATH.CONNECT) ? 'url(/world.jpg)' : '',
+          padding: '2rem 2rem',
           borderRadius: '4rem 0 0 4rem',
-          boxSizing: 'border-box'
-        }
-      }
+          boxSizing: 'border-box',
+          position: 'relative'
+        },
 
+        '.profile-container': {
+          display: 'flex',
+          position: 'absolute',
+          right: 0,
+
+          '.profile-name': {
+            fontFamily: 'Nunito',
+            fontSize: "18px",
+            display: "flex",
+            alignItems: "center"
+          },
+
+          '.profile': {
+            marginLeft: '1rem',
+            display: 'flex',
+            alignItems: 'center',
+            cursor: 'pointer',
+          }
+        },
+        
+      },
+
+      '.margin-right-1': {
+        marginRight: "0.5rem"
+      },
+
+      '.margin-left-1': {
+        marginLeft: "1.5rem"
+      }
       
     }
   }

@@ -4,8 +4,14 @@ import { SidebarComponentStyle } from "./index.style";
 import { Logo } from "../../../assets/image";
 import { BoxProps, Box, Divider, Typography } from '@mui/material';
 import { ClockSvg, CommentSvg, PlusSvg } from "../../../assets/sidebar";
+import { PATH } from "../../../consts";
 
-export const SidebarComponent: React.FC = () => {
+type SidebarComponentProps = BoxProps & {
+  currentPath: string
+}
+
+export const SidebarComponent: React.FC<SidebarComponentProps> = (props) => {
+  const {currentPath} = props;
   return (
     <SidebarComponentStyle>
       <Link to = "/">
@@ -13,8 +19,8 @@ export const SidebarComponent: React.FC = () => {
       </Link>
         <Box sx = {{ height: '16px'}} />
         <Box className = "sidebar-list">
-          <Link className = "sidebar-item active" to = "/">
-            <ClockSvg svgColor = "black" />
+          <Link className = {`sidebar-item ${currentPath === PATH.DOWNLOAD || currentPath === PATH.CONNECT ? 'active' : ''}`} to = { PATH.DOWNLOAD}>
+            <ClockSvg svgColor = {currentPath === PATH.DOWNLOAD || currentPath === PATH.CONNECT? 'black' : 'white'} />
             <Typography className = "sidebar-link-text">Verification flows</Typography>
           </Link>
           <Link className = "sidebar-item" to = "/">

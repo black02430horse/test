@@ -5,13 +5,14 @@ import { ButtonComponent } from "../../common/Button";
 import { Apple, Play, Next} from "../../../assets/icon";
 import { Link } from "react-router-dom";
 import QRCode from "react-qr-code";
+import { PATH } from "../../../consts";
 
 export const DownLoadView: React.FC = () => {
   return (
     <DownloadViewStyle>
       <Box className = "up-container">
         <Typography className = 'title font-size-36px' margin={"auto"}>Download Exoid App</Typography>
-        <Box className = 'btn-group' margin = {"auto"}>
+        <Box className = 'btn-group'>
           < ButtonComponent className = 'btn'>
             <Box display={"flex"}>
                 <img src = {Apple} className = "btn-item"/>
@@ -41,7 +42,7 @@ export const DownLoadView: React.FC = () => {
       </Box>
       <Box className = 'next-btn-group'>
         <Typography className = 'font-family-nunito font-size-18px align-items-center'>Once you've installed the app, click this button</Typography>
-        <Link to = '/' className="text-decoration-none">
+        <Link to = { PATH.CONNECT } className="text-decoration-none">
           <Box className = 'next-btn'>
             <Typography className="font-family-nunito font-size-18px" marginRight={"1rem"}>Next</Typography>
             <img src = { Next } />
