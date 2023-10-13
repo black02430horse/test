@@ -11,7 +11,8 @@ function App() {
     <ThemeProvider theme={darkTheme}>
       <BrowserRouter>
         <Routes>
-          <Route path = "/" Component={DownLoadPage} />
+          <Route path = "/download" Component={DownLoadPage} />
+          <Route path = "*" Component={DownLoadPage} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

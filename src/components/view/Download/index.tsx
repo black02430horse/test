@@ -9,9 +9,9 @@ import QRCode from "react-qr-code";
 export const DownLoadView: React.FC = () => {
   return (
     <DownloadViewStyle>
-      <Box width={"400px"} margin={"auto"}>
-        <Typography className = 'title font-size-36px'>Download Exoid App</Typography>
-        <Box className = 'btn-group'>
+      <Box className = "up-container">
+        <Typography className = 'title font-size-36px' margin={"auto"}>Download Exoid App</Typography>
+        <Box className = 'btn-group' margin = {"auto"}>
           < ButtonComponent className = 'btn'>
             <Box display={"flex"}>
                 <img src = {Apple} className = "btn-item"/>
