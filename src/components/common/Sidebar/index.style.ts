@@ -11,8 +11,6 @@ export const SidebarComponentStyle = styled('div')<SidebarComponentStyleProps>(
       width: "300px",
       height: "100vh",
       backgroundColor: customTheme.colors.secondary00,
-      borderRadius: "",
-      
       '.sidebar-logo-img': {
         marginLeft: "9%",
         paddingTop: "3.5rem",
