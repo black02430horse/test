@@ -2,8 +2,9 @@ import React from 'react';
 import './App.css';
 import { ThemeProvider } from "@mui/material";
 import { darkTheme } from './styles';
-import { DownLoadPage } from './pages';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ConnectPage, DownLoadPage } from './pages';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { PATH } from './consts';
 
 
 function App() {
@@ -11,8 +12,9 @@ function App() {
     <ThemeProvider theme={darkTheme}>
       <BrowserRouter>
         <Routes>
-          <Route path = "/download" Component={DownLoadPage} />
-          <Route path = "*" Component={DownLoadPage} />
+          <Route path = { PATH.DOWNLOAD } element={<DownLoadPage />} />
+          <Route path = { PATH.CONNECT } element={<ConnectPage />} />
+          <Route path = "*" element={<Navigate to = { PATH.DOWNLOAD } />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

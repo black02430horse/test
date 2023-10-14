@@ -1,1 +1,2 @@
-export * from './Download'
+export * from './Download';
+export * from './Connect';
