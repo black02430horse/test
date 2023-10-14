@@ -16,7 +16,7 @@ import { ArrowSvg, InteractionSvg, Plus } from "../../../assets/icon";
 import { VerificationModel } from "../../../models";
 import Moment from 'react-moment';
 import { PATH } from "../../../consts";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 type FlowViewProps = BoxProps & {
   pageNum: number,
@@ -29,10 +29,10 @@ export const FlowView: React.FC<FlowViewProps> = (props) => {
   return (
     <FlowViewStyle>
       <Typography className="title font-size-48px">Available Flows</Typography>
-      <Box className="new-flow-btn">
+      <Link className="new-flow-btn" to = {PATH.CREATE}>
         <img className="margin-right-1" src={Plus} />
         <Typography className="font-size-24 font-family-nunito">New flow</Typography>
-      </Box>
+      </Link>
       <TableContainer component={Paper} className ="flow-table">
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>

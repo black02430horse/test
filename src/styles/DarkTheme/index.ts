@@ -7,7 +7,8 @@ const themeColor = {
 		secondary00: '#0D1E3E',
 		btnPrimary00: '#8A6BE1',
 		btnSecondary00: '#F5F2FD',
-		secondary10: '#F5F2FD'
+		secondary10: '#F5F2FD',
+		secondary20: '#f2f2f2',
 	}
 };
 

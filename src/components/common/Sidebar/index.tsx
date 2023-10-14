@@ -23,8 +23,8 @@ export const SidebarComponent: React.FC<SidebarComponentProps> = (props) => {
             <ClockSvg svgColor = {currentPath === PATH.FLOW? 'black' : 'white'} />
             <Typography className = "sidebar-link-text">Verification flows</Typography>
           </Link>
-          <Link className = "sidebar-item" to = "/">
-            <CommentSvg svgColor = "white" />
+          <Link className = {`sidebar-item ${currentPath === PATH.CREATE ? 'active' : ''}`} to = {PATH.CREATE}>
+            <CommentSvg svgColor = {currentPath === PATH.CREATE? 'black' : 'white'} />
             <Typography className = "sidebar-link-text">Create new flow</Typography>
           </Link>
           <Link className = "sidebar-item" to = "/">
