@@ -23,17 +23,25 @@ export const DownloadViewStyle = styled('div')<DownloadViewStyleProps>(
         '.btn-group': {
           display: "flex",
           marginTop: '0px',
+          margin: 'auto',
 
           '.btn': {
             marginRight: "8px",
             height: '47px',
             backgroudColor: customTheme.colors.black,
             borderRadius: '0.5rem',
-
+            width: "12.5rem",
             '.btn-item': {
               marginRight: "8px"
             }
           },
+        },
+
+        '.up-container': {
+          display: "grid",
+          justifyContent: "center",
+          width: "400px",
+          margin: "auto"
         },
 
         '.qr-code-wrapper': {
@@ -55,14 +63,14 @@ export const DownloadViewStyle = styled('div')<DownloadViewStyleProps>(
 
         '.next-btn-group': {
           backgroundColor: customTheme.colors.btnSecondary00,
-          borderRadius: '0.5rem',
-          padding: '1rem 2rem',
+          borderRadius: '1rem',
+          padding: '1rem 1.5rem',
           display: 'flex',
 
           '.next-btn': {
             backgroundColor: customTheme.colors.btnPrimary00,
             borderRadius: '4rem',
-            padding: '1rem',
+            padding: '0.8rem 1rem',
             textAlign: 'center',
             display: 'flex',
             textDecoration: 'none',
