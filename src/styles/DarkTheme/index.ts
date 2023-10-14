@@ -4,7 +4,9 @@ const themeColor = {
 	colors: {
 		white: '#ffffff',
 		black: '#000000',
-		secondary00: '#0D1E3E'
+		secondary00: '#0D1E3E',
+		btnPrimary00: '#8A6BE1',
+		btnSecondary00: '#F5F2FD'
 	}
 };
 
