@@ -6,6 +6,8 @@ import Play from './Play.svg';
 import Next from './Next.svg';
 import ProfileSvg from './ProfileSvg.svg';
 import DropdownSvg from './DropdownSvg.svg';
+import InteractionSvg from './InteractionSvg.svg';
+import ArrowSvg from './ArrowSvg.svg';
 
 export {
   Clock,
@@ -15,5 +17,7 @@ export {
   Play,
   Next,
   ProfileSvg,
-  DropdownSvg
+  ArrowSvg,
+  InteractionSvg,
+  DropdownSvg,
 }

@@ -14,13 +14,13 @@ export const SidebarComponent: React.FC<SidebarComponentProps> = (props) => {
   const {currentPath} = props;
   return (
     <SidebarComponentStyle>
-      <Link to = "/">
+      <Link to = {PATH.DOWNLOAD}>
         <img className = "sidebar-logo-img" src = {Logo} alt = "sidebar logo"/>
       </Link>
         <Box sx = {{ height: '16px'}} />
         <Box className = "sidebar-list">
-          <Link className = {`sidebar-item ${currentPath === PATH.DOWNLOAD || currentPath === PATH.CONNECT ? 'active' : ''}`} to = { PATH.DOWNLOAD}>
-            <ClockSvg svgColor = {currentPath === PATH.DOWNLOAD || currentPath === PATH.CONNECT? 'black' : 'white'} />
+          <Link className = {`sidebar-item ${currentPath === PATH.FLOW ? 'active' : ''}`} to = { PATH.FLOW}>
+            <ClockSvg svgColor = {currentPath === PATH.FLOW? 'black' : 'white'} />
             <Typography className = "sidebar-link-text">Verification flows</Typography>
           </Link>
           <Link className = "sidebar-item" to = "/">

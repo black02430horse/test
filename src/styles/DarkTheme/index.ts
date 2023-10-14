@@ -6,7 +6,8 @@ const themeColor = {
 		black: '#000000',
 		secondary00: '#0D1E3E',
 		btnPrimary00: '#8A6BE1',
-		btnSecondary00: '#F5F2FD'
+		btnSecondary00: '#F5F2FD',
+		secondary10: '#F5F2FD'
 	}
 };
 
@@ -17,6 +18,7 @@ const themeFont = {
 	fontWeights: {
 		semibold: 900,
 		regular: 700,
+		semiLight: 500,
 		light: 400
 	}
 };
