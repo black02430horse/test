@@ -26,7 +26,7 @@ export const LayoutComponentStyle = styled('div')<LayoutComponentStyleProps>(
           height: '100%',
           backgroundImage: (currentPath === PATH.DOWNLOAD || currentPath === PATH.CONNECT) ? 'url(/world.jpg)' : '',
           padding: '2rem 2rem',
-          borderRadius: '4rem 0 0 4rem',
+          borderRadius: '3rem 0 0 3rem',
           boxSizing: 'border-box',
           position: 'relative'
         },
@@ -35,6 +35,7 @@ export const LayoutComponentStyle = styled('div')<LayoutComponentStyleProps>(
           display: 'flex',
           position: 'absolute',
           right: 0,
+          marginTop: "2rem",
 
           '.profile-name': {
             fontFamily: 'Nunito',
