@@ -10,6 +10,11 @@ import InteractionSvg from './InteractionSvg.svg';
 import ArrowSvg from './ArrowSvg.svg';
 import RecycleBinSvg from './RecycleBinSvg.svg';
 import FlowdownSvg from './FlowdownSvg.svg';
+import EyeSvg from './EyeSvg.svg';
+import CardSvg from './CardSvg.svg';
+import ExportSvg from './ExportSvg.svg';
+import PngSvg from './PngSvg.svg';
+import UserSvg from './UserSvg.svg';
 
 export {
   Clock,
@@ -23,5 +28,10 @@ export {
   InteractionSvg,
   DropdownSvg,
   FlowdownSvg,
-  RecycleBinSvg
+  RecycleBinSvg,
+  EyeSvg,
+  CardSvg,
+  PngSvg,
+  ExportSvg,
+  UserSvg
 }
