@@ -31,9 +31,9 @@ export const ConnectViewStyle = styled('div')<ConnectViewStyleProps>(
 
           '.qr-code-container': {
             backgroundColor: customTheme.colors.white,
-            borderRadius: '1.5rem',
+            borderRadius: '2rem',
             textAlign: 'center',
-            padding: '1.2rem 0rem 1.2rem 0rem',
+            padding: '1rem 0',
             marginTop: '2rem'
           }
         },

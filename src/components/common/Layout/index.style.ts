@@ -25,12 +25,41 @@ export const LayoutComponentStyle = styled('div')<LayoutComponentStyleProps>(
           // width: "100%",
           height: '100%',
           backgroundImage: (currentPath === PATH.DOWNLOAD || currentPath === PATH.CONNECT) ? 'url(/world.jpg)' : '',
-          padding: '4rem 2rem',
+          padding: '2rem 2rem',
           borderRadius: '4rem 0 0 4rem',
-          boxSizing: 'border-box'
-        }
-      }
+          boxSizing: 'border-box',
+          position: 'relative'
+        },
 
+        '.profile-container': {
+          display: 'flex',
+          position: 'absolute',
+          right: 0,
+
+          '.profile-name': {
+            fontFamily: 'Nunito',
+            fontSize: "18px",
+            display: "flex",
+            alignItems: "center"
+          },
+
+          '.profile': {
+            marginLeft: '1rem',
+            display: 'flex',
+            alignItems: 'center',
+            cursor: 'pointer',
+          }
+        },
+        
+      },
+
+      '.margin-right-1': {
+        marginRight: "0.5rem"
+      },
+
+      '.margin-left-1': {
+        marginLeft: "1.5rem"
+      }
       
     }
   }
