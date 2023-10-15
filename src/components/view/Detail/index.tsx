@@ -1,12 +1,71 @@
-import React from "react";
+import React, { useState } from "react";
 import { DetailViewStyle } from "./index.style";
 import { Grid, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography, Paper } from "@mui/material";
 import { InputComponent } from "../../common/Input";
 import { Box } from "@mui/system";
 import { Link } from "react-router-dom";
 import Moment from 'react-moment';
-import { CardSvg, ExportSvg, EyeSvg, PngSvg, UserSvg } from "../../../assets/icon";
+import { CardSvg, CloseSvg, ExportSvg, EyeSvg, PngSvg, UserSvg } from "../../../assets/icon";
 import QRCode from "react-qr-code";
+import { Modal } from "@mui/base";
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 500,
+  bgcolor: '#F5F2FD',
+  borderRadius: '1.5rem',
+  boxShadow: 24,
+  fontFamily: 'Nunito',
+  p: 4,
+
+  '.modal-header': {
+    display: 'flex',
+    justifyContent: 'space-between',
+    marginBottom: "2rem",
+
+    '.header-title': {
+      fontFamily: "Nunito",
+      fontSize: '30px',
+      fontWeight: 'bold',
+    },
+
+    '.close-btn': {
+      minWidth: '10px',
+      padding: 0,
+      cursor: "pointer"
+    },
+  },
+
+  '.modal-content': {
+    marginTop: '2rem'
+  },
+
+  '.interaction-detail': {
+    borderRadius: '1rem',
+    backgroundColor: 'white',
+    marginBottom: '0.5rem',
+    padding: '0.5rem 1rem',
+
+    '.interaction-item': {
+      display: 'flex',
+      justifyContent: 'space-between',
+      padding: '1rem',
+      borderBottom: '1px solid gray',
+
+      '.interaction-content': {
+        fontFamily: "Nunito",
+        fontSize: "13px"
+      }
+    },
+
+    '.interaction-item:last-child': {
+      borderBottom: 'none'
+    }
+  }
+};
 
 export const DetailView: React.FC = () => {
 
@@ -16,6 +75,20 @@ export const DetailView: React.FC = () => {
     {name: "Chiaras", result: "Verified", color: "green"},
     {name: "JohnV", result: "Faild", color: "red"},
   ];
+  const interDetailList = [
+    {first: "Name", second: "Mario Rossi"},
+    {first: "Name", second: "Mario Rossi"},
+    {first: "Name", second: "Mario Rossi"},
+    {first: "Country", second: "Italy"},
+    {first: "Address", second: "Exoid street 32"},
+
+  ];
+
+  const [open, setOpen] = useState<boolean>(false);
+
+  const handleClose = () => {
+    setOpen(false);
+  }
 
   return (
     <DetailViewStyle>
@@ -76,7 +149,7 @@ export const DetailView: React.FC = () => {
               <img src = {ExportSvg} />
               <Typography marginLeft="0.5rem"className="font-family-nunito font-size-15px">Export interactions</Typography>
             </Box>
-            <Box className="access-btn">
+            <Box className="access-btn" onClick = {()=>setOpen(true)}>
               <img src = {UserSvg} />
               <Typography marginLeft="0.2rem"className="font-family-nunito font-size-24px font-regular">43</Typography>
               <Typography marginLeft="1rem"className="font-family-nunito font-size-15px">Access counter</Typography>
@@ -84,6 +157,58 @@ export const DetailView: React.FC = () => {
           </Box>
         </Grid>
       </Grid>
+      <Modal
+        open={open}
+        onClose={handleClose}
+      >
+        <Box sx = {style}>
+          <Box className="modal-header">
+            <Typography className = "header-title">Interaction details</Typography>
+            <img className="close-btn" src = {CloseSvg} onClick={handleClose}/>
+          </Box>
+          <Grid container spacing={2}>
+            <Grid item xs={6}>
+              <Box className="interaction-detail">
+                {interDetailList.map(item => (
+
+                  <Box className="interaction-item">
+                    <Typography className="interaction-content">{item.first}</Typography>
+                    <Typography className="interaction-content">{item.second}</Typography>
+                  </Box>
+                ))}
+              </Box>
+              <Box className="interaction-detail">
+                <Box className="interaction-item">
+                  <Typography className="interaction-content">Issuing day</Typography>
+                  <Typography className="interaction-content">12 May 2018</Typography>
+                </Box>
+                <Box className="interaction-item">
+                  <Typography className="interaction-content">Expiration day</Typography>
+                  <Typography className="interaction-content">12 May 2018</Typography>
+                </Box>
+              </Box>
+            </Grid>
+            <Grid item xs={6}>
+              <Box className="interaction-detail">
+                <Box className="interaction-item">
+                  <Typography className="interaction-content">Date</Typography>
+                  <Typography className="interaction-content">20/10/2023</Typography>
+                </Box>
+                <Box className="interaction-item">
+                  <Typography className="interaction-content">Connection ID</Typography>
+                  <Typography className="interaction-content">34612swerrd</Typography>
+                </Box>
+              </Box>
+              <Box className="interaction-detail">
+                <Box className="interaction-item">
+                  <Typography className="interaction-content">Result</Typography>
+                  <Typography className="interaction-content">Verified</Typography>
+                </Box>
+              </Box>
+            </Grid>
+          </Grid>
+        </Box>
+      </Modal>
     </DetailViewStyle>
   )
 }

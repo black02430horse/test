@@ -15,6 +15,7 @@ import CardSvg from './CardSvg.svg';
 import ExportSvg from './ExportSvg.svg';
 import PngSvg from './PngSvg.svg';
 import UserSvg from './UserSvg.svg';
+import CloseSvg from './CloseSvg.svg';
 
 export {
   Clock,
@@ -33,5 +34,6 @@ export {
   CardSvg,
   PngSvg,
   ExportSvg,
-  UserSvg
+  UserSvg,
+  CloseSvg
 }
